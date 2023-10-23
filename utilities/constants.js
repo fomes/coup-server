@@ -56,7 +56,7 @@ const Actions = {
     influence: CardNames.CAPTAIN,
     blockableBy: [CardNames.AMBASSADOR, CardNames.AMBASSADOR],
     isChallengeable: true,
-    moneyDelta: 2, // EDGE CASE: if victim only has 1 or 0 coins
+    moneyDelta: 2,
   },
 };
 
