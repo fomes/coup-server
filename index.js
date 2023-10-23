@@ -30,6 +30,10 @@ app.get("/exists/:namespace", function (req, res) {
   res.json({ exists: namespace in namespaces });
 });
 
+app.get("/", function (req, res) {
+  res.json({ message: "Hello Coup" });
+});
+
 openSocket = (gameSocket, namespace) => {
   let players = [];
   let partyMembers = [];
