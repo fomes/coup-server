@@ -2,7 +2,15 @@ const express = require("express");
 
 const app = express();
 const cors = require("cors");
-app.use(cors());
+
+app.use(
+  cors({
+    origin: process.env.APP_URL,
+    headers: ["Content-Type"],
+    credentials: true,
+  })
+);
+
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
 const CoupGame = require("./game/coup");
