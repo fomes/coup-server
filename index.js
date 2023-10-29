@@ -5,7 +5,7 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin: process.env.APP_URL,
+    origin: ["https://coup-server.vercel.app", "http://localhost:3000"],
     headers: ["Content-Type"],
     credentials: true,
   })
