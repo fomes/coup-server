@@ -39,7 +39,7 @@ app.get("/exists/:namespace", function (req, res) {
 });
 
 app.get("/", function (req, res) {
-  res.json({ message: "Hello Coup" });
+  res.json({ message: "Hello Coup , 29-10-2023, 15:32" });
 });
 
 openSocket = (gameSocket, namespace) => {
