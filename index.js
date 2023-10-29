@@ -1,13 +1,13 @@
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
-const cors = require("cors");
 
 app.use(
   cors({
     origin: ["https://coup-server.vercel.app", "http://localhost:3000"],
-    headers: ["Content-Type"],
-    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
