@@ -430,21 +430,6 @@ class CoupGame {
           break;
         }
       }
-
-      // fix tax - fome
-      for (let i = 0; i < this.players.length; i++) {
-        if (this.players[i].name == target) {
-          if (this.players[i].money >= 3) {
-            this.players[i].money -= 3;
-          } else if (this.players[i].money == 2) {
-            this.players[i].money -= 2;
-          } else if (this.players[i].money == 1) {
-            this.players[i].money -= 1;
-          } else {
-          }
-          break;
-        }
-      }
       this.nextTurn();
     } else if (execute == "assassinate") {
       for (let i = 0; i < this.players.length; i++) {
