@@ -95,7 +95,7 @@ class CoupGame {
             bind.closeChallenge();
             bind.gameSocket.emit(
               "g-addLog",
-              `${res.challenger} challenged ${res.challengee}`
+              `${res.challenger} contestou ${res.challengee}`
             );
             bind.reveal(
               res.action,
@@ -118,7 +118,7 @@ class CoupGame {
             bind.closeChallenge();
             bind.gameSocket.emit(
               "g-addLog",
-              `${res.challenger} challenged ${res.challengee}'s block`
+              `${res.challenger} contestou o bloqueio de ${res.challengee}`
             );
             bind.reveal(
               res.prevAction,
@@ -141,7 +141,7 @@ class CoupGame {
             bind.closeChallenge();
             bind.gameSocket.emit(
               "g-addLog",
-              `${res.blocker} blocked ${res.blockee}`
+              `${res.blocker} bloqueou ${res.blockee}`
             );
             bind.openBlockChallenge(
               res.counterAction,
@@ -170,7 +170,7 @@ class CoupGame {
             ) {
               bind.gameSocket.emit(
                 "g-addLog",
-                `${res.challenger}'s challenge on ${res.challengee}'s block failed`
+                `${res.challenger} falhou em bloquear ${res.challengee}`
               );
               for (
                 let i = 0;
@@ -199,11 +199,11 @@ class CoupGame {
             } else {
               bind.gameSocket.emit(
                 "g-addLog",
-                `${res.challenger}'s challenge on ${res.challengee}'s block succeeded`
+                `${res.challenger} contestou ${res.challengee}`
               );
               bind.gameSocket.emit(
                 "g-addLog",
-                `${res.challengee} lost their ${res.revealedCard}`
+                `${res.challengee} perdeu a carta ${res.revealedCard}`
               );
               for (
                 let i = 0;
@@ -228,7 +228,7 @@ class CoupGame {
             ) {
               bind.gameSocket.emit(
                 "g-addLog",
-                `${res.challenger}'s challenge on ${res.challengee} failed`
+                `${res.challenger} falhou em contestar ${res.challengee}`
               );
               for (
                 let i = 0;
@@ -267,11 +267,11 @@ class CoupGame {
             } else {
               bind.gameSocket.emit(
                 "g-addLog",
-                `${res.challenger}'s challenge on ${res.challengee} succeeded`
+                `${res.challenger} contestou ${res.challengee}`
               );
               bind.gameSocket.emit(
                 "g-addLog",
-                `${res.challengee} lost their ${res.revealedCard}`
+                `${res.challengee} perdeu a carta ${res.revealedCard}`
               );
               for (
                 let i = 0;
@@ -298,7 +298,7 @@ class CoupGame {
         if (bind.isChooseInfluenceOpen) {
           bind.gameSocket.emit(
             "g-addLog",
-            `${res.playerName} lost their ${res.influence}`
+            `${res.playerName} perdeu a carta ${res.influence}`
           );
           for (
             let i = 0;
@@ -392,7 +392,7 @@ class CoupGame {
     }
     this.gameSocket.emit(
       "g-addLog",
-      `${action.source} used ${action.action}${logTarget}`
+      `${action.source} usou ${action.action}${logTarget}`
     );
     const execute = action.action;
     const target = action.target;
@@ -490,7 +490,7 @@ class CoupGame {
       this.players.forEach((x) => {
         console.log(x.influences);
         if (x.influences.length == 0 && !x.isDead) {
-          this.gameSocket.emit("g-addLog", `${x.name} is out!`);
+          this.gameSocket.emit("g-addLog", `${x.name} está fora!`);
           this.aliveCount -= 1;
           x.isDead = true;
           x.money = 0;
