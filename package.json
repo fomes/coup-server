@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "build": "netlify deploy"
+    "build": "npm run build"
   },
   "keywords": [],
   "author": "",

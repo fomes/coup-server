@@ -5,7 +5,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["https://coup-server.vercel.app", "http://localhost:3000"],
+    origin: [process.env.APP_URL_LOCAL, process.env.APP_URL_WEB],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
