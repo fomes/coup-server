@@ -6,7 +6,7 @@ const app = express();
 app.use((req, res, next) => {
   res.setHeader(
     "Access-Control-Allow-Origin",
-    "https://coup-client.vercel.app/"
+    "https://coup-client.vercel.app"
   );
   res.setHeader(
     "Access-Control-Allow-Methods",
