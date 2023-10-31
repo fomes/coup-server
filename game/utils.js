@@ -86,9 +86,9 @@ buildPlayers = (players) => {
     "#DD6C75",
     "#8C6CE6",
     "#CB8F8F",
-    "#364968",
+    "#3c5173",
     "#F72464",
-    "#033FFF",
+    "#144cff",
   ];
 
   shuffleArray(colors);
