@@ -83,13 +83,14 @@ buildNameIndexMap = (players) => {
 buildPlayers = (players) => {
   colors = [
     "#73C373",
-    "#7AB8D3",
     "#DD6C75",
     "#8C6CE6",
-    "#EA9158",
     "#CB8F8F",
-    "#FFC303",
+    "#364968",
+    "#F72464",
+    "#033FFF",
   ];
+
   shuffleArray(colors);
 
   players.forEach((x) => {
