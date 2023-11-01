@@ -1,10 +1,10 @@
 const express = require("express");
-const cors = require("cors");
 
 const app = express();
 
 app.use((req, res, next) => {
-  // res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+  // res.setHeader("Access-Control-Allow-Origin", "*");
+  // res.setHeader("Access-Control-Allow-Origin", "http://localhost:8000");
   res.setHeader("Access-Control-Allow-Origin", process.env.APP_URL);
   res.setHeader(
     "Access-Control-Allow-Methods",
@@ -50,7 +50,7 @@ app.get("/exists/:namespace", function (req, res) {
 });
 
 app.get("/", function (req, res) {
-  res.json({ message: "Hello Coup , 29-10-2023, 15:32" });
+  res.send("<h2>Servidor iniciado, pode fechar esta aba.</h2>");
 });
 
 openSocket = (gameSocket, namespace) => {
